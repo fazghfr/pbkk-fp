@@ -1,5 +1,11 @@
 <?= $this->extend('layout/template'); ?>
 
+<style>
+        .flash-message {
+            display: none;
+        }
+</style>
+
 <?= $this->section('content'); ?>
 <body>
     <div class="title mt-5">
@@ -55,6 +61,7 @@
                 <button class="btn btn-primary" type="submit">Confirm</button>
             </form>
         </div>
+
 
         <!-- TODO : CUSTOMIZE THE PAGINATION -->
         <div>

@@ -17,7 +17,7 @@
 
             <div class="form-group mx-auto" style="max-width: 300px;">
                 <label for="product_price">Price:</label>
-                <input type="number" class="form-control" name="product_price" id="product_price" placeholder="<?= $product['product_price'] ?>">
+                <input type="number" class="form-control" name="product_price" id="product_price" placeholder="<?= number_format($product['product_price'] , 0, '.', ',');?>">
             </div>
 
             <div class="form-group mx-auto" style="max-width: 300px;">

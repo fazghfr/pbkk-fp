@@ -18,6 +18,7 @@
             </thead>
             <tbody>
                 <?php foreach ($datas as $data): ?>
+                    <?php if ($data['username'] === auth()->user()->username) continue; ?>
                     <tr>
                         <td><?= $data['username'] ?></td>
                         <td><?= $data['secret']?></td>

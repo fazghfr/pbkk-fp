@@ -23,6 +23,7 @@ $routes->get('/home-transaction', 'TransactionController::beforeSes', ['filter' 
 $routes->get('/startsession', 'TransactionController::createSes', ['filter' => 'auth']);
 $routes->get('/transaction/(:num)', 'TransactionController::onSes/$1', ['filter' => 'auth']);
 $routes->post('/transaction/(:num)', 'TransactionController::onSes/$1', ['filter' => 'auth']);
+$routes->post('/transaction/detail/(:num)', 'TransactionController::detail/$1', ['filter' => 'auth']);
 $routes->post('transaction/addItem', 'TransactionController::addItem', ['filter' => 'auth']);
 $routes->post('/confirm', 'TransactionController::confirm', ['filter' => 'auth']);
 
@@ -30,8 +31,6 @@ $routes->post('/confirm', 'TransactionController::confirm', ['filter' => 'auth']
 $routes->get('/employees', 'EmployeeController::index', ['filter' => 'admin']);
 $routes->post('/employees/delete/(:num)', 'EmployeeController::delete/$1', ['filter' => 'admin']);
 
-// todo : add register feature custom one
-//$routes->get('/register', 'EmployeeController::register', ['filter' => 'admin']);
 // see list of employee
 
 service('auth')->routes($routes);

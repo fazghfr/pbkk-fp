@@ -17,7 +17,7 @@
                 <th>Product Quantity</th>
             </tr>
             <tr>
-                <td><?= $product['product_price'] ?></td>
+                <td><?= number_format($product['product_price'] , 0, '.', ','); ?></td>
                 <td><?= $product['product_qty'] ?></td>
             </tr>
         </table>

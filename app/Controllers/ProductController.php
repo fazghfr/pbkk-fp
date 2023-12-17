@@ -16,10 +16,10 @@ class ProductController extends BaseController
 
         if ($searchQuery) {
             // If there is a search query, filter the results
-            $data['products'] = $productModel->like('product_name', $searchQuery)->paginate(5, 'default', $currentPage);
+            $data['products'] = $productModel->like('product_name', $searchQuery)->paginate(5, 'product');
         } else {
             // If no search query, get all products
-            $data['products'] = $productModel->paginate(5, 'default', $currentPage);
+            $data['products'] = $productModel->paginate(5, 'product');
         }
 
         // Get the pager

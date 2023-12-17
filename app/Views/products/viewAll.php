@@ -27,7 +27,7 @@
                 <?php foreach ($products as $product): ?>
                     <tr>
                         <td><?= $product['product_name'] ?></td>
-                        <td><?= intval($product['product_price']) ?></td>
+                        <td><?= number_format(intval($product['product_price']) , 0, '.', ',');?></td> 
                         <td><?= $product['product_qty'] ?></td>
                         <td class="text-center d-flex d-column">
                             <form action="/product/edit/<?= $product['product_id'] ?>" method="get">
@@ -42,14 +42,16 @@
             </tbody>
         </table>
 
-        <div class="add-product mt-5">
+        
+        <div>
+            <?php echo $pager->links('product', 'product_pagination')?>
+        </div>
+
+        <div class="add-product mt-1">
             <a href="/product/add-form" class="btn btn-primary">Add Product</a>
         </div>
 
         <!-- TODO : CUSTOMIZE THE PAGINATION -->
-        <div>
-            <?php echo $pager->links('default')?>
-        </div>
     </div>
 
     
